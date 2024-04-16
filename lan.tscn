@@ -108,3 +108,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="Criar" to="." method="_on_criar_pressed"]
 [connection signal="pressed" from="Conectar" to="." method="_on_conectar_pressed"]
+[connection signal="pressed" from="Começar" to="." method="_on_começar_pressed"]

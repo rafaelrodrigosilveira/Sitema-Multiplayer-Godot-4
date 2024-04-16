@@ -25,6 +25,16 @@ func _on_conectar_pressed():
 	$Conectar.disabled = true # desabilita botão
 	pass 
 
+func _on_começar_pressed():
+	if multiplayer.is_server():
+		rpc("comecar_jogo")
+	pass
+
+@rpc("any_peer","call_local")
+func comecar_jogo():
+	get_tree().change_scene_to_file("res://fase.tscn") # chama a cena do jogo
+	pass
+
 func lista_alterada():
 	var lista = Network.retornar_lista()
 	$ListaJogadores.clear()
@@ -34,3 +44,4 @@ func lista_alterada():
 		else:
 			$ListaJogadores.add_item(lista[i][1])
 	pass
+

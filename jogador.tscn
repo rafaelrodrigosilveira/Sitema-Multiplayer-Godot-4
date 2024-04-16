@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bku6lbx8n2mpw"]
+
+[ext_resource type="Texture2D" uid="uid://6rha3ddnxv1i" path="res://icon.svg" id="1_1kye6"]
+[ext_resource type="Script" path="res://jogador.gd" id="1_itscv"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_w2gfc"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Jogador" type="Node2D"]
+script = ExtResource("1_itscv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1kye6")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_w2gfc")
+
+[node name="Nickname" type="Label" parent="."]
+offset_left = -64.0
+offset_top = -122.0
+offset_right = 64.0
+offset_bottom = -99.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
