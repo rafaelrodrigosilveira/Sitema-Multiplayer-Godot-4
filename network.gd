@@ -25,6 +25,7 @@ func conectado_ao_servidor():
 
 @warning_ignore("unused_parameter", "shadowed_variable")
 func par_disconectado(id):
+	rpc("remover_jogador",id)
 	pass
 
 func falha_na_conexao():
@@ -45,6 +46,17 @@ func registrar_jogador(id,nome):
 		rpc("registrar_jogador",id,nome)
 	# acrescenta os dados dos jogadores a lista
 	jogadores.append([id,nome])
+	emit_signal("lista_alterada")
+	
+@rpc("any_peer", "call_local") # talvez tenha que remover aspas do call_local
+func remover_jogador():
+	for i in range(jogadores.size()):
+		if jogadores[i][0] == id:
+			jogadores.remove_at(i)
+			emit_signal("lista_alterada")
+			return
+	pass
+
 # FUNCAO DE CRIACAO DO SERVIDOR
 func criar_servidor():
 	par = ENetMultiplayerPeer.new()
@@ -53,7 +65,6 @@ func criar_servidor():
 	par.peer_disconnected.connect(self.par_disconectado)
 	id = multiplayer.multiplayer_peer.get_unique_id() # recebe id unico
 	registrar_jogador(id, nome_jogador)
-	emit_signal("lista_alterada")
 	pass
 
 # FUNCAO DE CONEXAO DO CLIENTE AO SERVIDOR
@@ -73,3 +84,4 @@ func atualizar_nome(novo_nome):
 
 func retornar_lista():
 	return jogadores
+	pass

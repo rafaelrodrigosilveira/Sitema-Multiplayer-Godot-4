@@ -64,6 +64,7 @@ offset_left = 576.0
 offset_top = 59.0
 offset_right = 871.0
 offset_bottom = 135.0
+text = "127.0.0.1"
 placeholder_text = "127.0.0.1"
 
 [node name="NomeEdit" type="LineEdit" parent="."]
@@ -72,6 +73,7 @@ offset_left = 576.0
 offset_top = 183.0
 offset_right = 871.0
 offset_bottom = 259.0
+text = "Jogador"
 placeholder_text = "Jogador"
 
 [node name="Label" type="Label" parent="."]

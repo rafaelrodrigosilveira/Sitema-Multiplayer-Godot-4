@@ -23,6 +23,6 @@ func lista_alterada():
 	var lista = Network.retornar_lista()
 	$ListaJogadores.clear()
 	for i in range(lista.size()):
-		$ListaJogadores.add_item([i][1])
+		$ListaJogadores.add_item(lista[i][1])
 		pass
 	pass
