@@ -29,9 +29,12 @@ func par_disconectado(id):
 	pass
 
 func falha_na_conexao():
+	par = null
+	multiplayer.set_multiplayer_peer(null)
 	pass
 
 func queda_do_servidor():
+	get_tree().quit()
 	pass
 
 # REGISTRAR JOGADOR
