@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cc4bnsk3bdawh"]
+
+[node name="LAN" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ListaJogadores" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -502.0
+offset_top = 59.0
+offset_right = -207.0
+offset_bottom = 379.0
+grow_horizontal = 2
+
+[node name="Criar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = -134.0
+offset_right = 369.0
+offset_bottom = -60.0
+grow_vertical = 0
+text = "Criar Servidor"
+
+[node name="Conectar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 429.0
+offset_top = -134.0
+offset_right = 724.0
+offset_bottom = -60.0
+grow_vertical = 0
+text = "Conectar ao Servidor"
+
+[node name="Começar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 794.0
+offset_top = -134.0
+offset_right = 1089.0
+offset_bottom = -60.0
+grow_vertical = 0
+text = "Começar Jogo"
+
+[node name="IPEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 59.0
+offset_right = 871.0
+offset_bottom = 135.0
+placeholder_text = "127.0.0.1"
+
+[node name="NomeEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 183.0
+offset_right = 871.0
+offset_bottom = 259.0
+placeholder_text = "Jogador"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 59.0
+offset_right = 576.0
+offset_bottom = 135.0
+text = "IP:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 183.0
+offset_right = 576.0
+offset_bottom = 259.0
+text = "NOME:"
+horizontal_alignment = 1
+vertical_alignment = 1
