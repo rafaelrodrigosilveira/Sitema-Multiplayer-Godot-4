@@ -11,6 +11,7 @@ var par = null
 var jogadores =[]
 
 signal lista_alterada
+signal conexao_resetada
 
 func _ready():
 	multiplayer.connected_to_server.connect(self.conectado_ao_servidor)
@@ -29,12 +30,21 @@ func par_disconectado(id):
 	pass
 
 func falha_na_conexao():
-	par = null
-	multiplayer.set_multiplayer_peer(null)
+	resetar_conexao()
 	pass
 
 func queda_do_servidor():
-	get_tree().quit()
+	#get_tree().quit()
+	if not get_tree().current_scene.name == "lan":
+		get_tree().change_scene_to_file("res://lan.tscn")
+	resetar_conexao()
+	pass
+
+func resetar_conexao():
+	par = null
+	multiplayer.set_multiplayer_peer(null)
+	jogadores.clear()
+	emit_signal("conexao_resetada")
 	pass
 
 # REGISTRAR JOGADOR
@@ -64,11 +74,14 @@ func remover_jogador():
 func criar_servidor():
 	par = ENetMultiplayerPeer.new()
 	par.create_server(PORTA, MAXJOGADORES)
-	multiplayer.set_multiplayer_peer(par)
-	par.peer_disconnected.connect(self.par_disconectado)
-	id = multiplayer.multiplayer_peer.get_unique_id() # recebe id unico
-	registrar_jogador(id, nome_jogador)
-	pass
+	var ip = retornar_ip()
+	if ip.begins_with("192"):
+		multiplayer.set_multiplayer_peer(par)
+		par.peer_disconnected.connect(self.par_disconectado)
+		id = multiplayer.multiplayer_peer.get_unique_id() # recebe id unico
+		registrar_jogador(id, nome_jogador)
+	else:
+		resetar_conexao()
 
 # FUNCAO DE CONEXAO DO CLIENTE AO SERVIDOR
 func entrar_servidor():
@@ -98,5 +111,5 @@ func retornar_ip():
 			return lista_ip[i]
 		if lista_ip[i].begins_with("172"):
 			return lista_ip[i]
-	return ip
+	return IPPADRAO
 	pass

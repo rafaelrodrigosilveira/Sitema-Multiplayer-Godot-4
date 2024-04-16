@@ -106,6 +106,39 @@ text = "IP do Servidor"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ErroPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.5
+offset_top = -142.0
+offset_right = 192.5
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ErroPanel"]
+layout_mode = 2
+offset_top = 1.0
+offset_right = 385.0
+offset_bottom = 193.0
+text = "Ocorreu um erro! Tente novamente."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ErroPanel"]
+layout_mode = 2
+offset_left = 116.5
+offset_top = 220.0
+offset_right = 265.5
+offset_bottom = 273.0
+text = "Confirmar"
+
 [connection signal="pressed" from="Criar" to="." method="_on_criar_pressed"]
 [connection signal="pressed" from="Conectar" to="." method="_on_conectar_pressed"]
 [connection signal="pressed" from="Começar" to="." method="_on_começar_pressed"]
+[connection signal="pressed" from="ErroPanel/Button" to="." method="_on_erropanel_button_pressed"]

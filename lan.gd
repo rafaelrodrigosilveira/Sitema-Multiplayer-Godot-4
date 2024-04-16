@@ -4,6 +4,7 @@ extends Control
 
 func _ready():
 	Network.lista_alterada.connect(self.lista_alterada)
+	Network.conexao_resetada.connect(self.conexao_resetada)
 	pass
 
 
@@ -45,3 +46,13 @@ func lista_alterada():
 			$ListaJogadores.add_item(lista[i][1])
 	pass
 
+func conexao_resetada():
+	$ErroPanel.show()
+	pass
+
+
+func _on_erropanel_button_pressed():
+	$Criar.disabled = false # desabilita botão
+	$Conectar.disabled = false # desabilita botão
+	$ErroPanel.hide()
+	pass
