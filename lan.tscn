@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cc4bnsk3bdawh"]
+[gd_scene load_steps=2 format=3 uid="uid://cc4bnsk3bdawh"]
+
+[ext_resource type="Script" path="res://lan.gd" id="1_jst06"]
 
 [node name="LAN" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jst06")
 
 [node name="ListaJogadores" type="ItemList" parent="."]
 layout_mode = 1
@@ -90,3 +93,6 @@ offset_bottom = 259.0
 text = "NOME:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Criar" to="." method="_on_criar_pressed"]
+[connection signal="pressed" from="Conectar" to="." method="_on_conectar_pressed"]
