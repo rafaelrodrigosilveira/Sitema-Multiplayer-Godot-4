@@ -88,3 +88,15 @@ func atualizar_nome(novo_nome):
 func retornar_lista():
 	return jogadores
 	pass
+
+func retornar_ip():
+	var lista_ip = IP.get_local_addresses()
+	for i in range(lista_ip.size()):
+		if lista_ip[i].begins_with("192"):
+			return lista_ip[i]
+		if lista_ip[i].begins_with("10"):
+			return lista_ip[i]
+		if lista_ip[i].begins_with("172"):
+			return lista_ip[i]
+	return ip
+	pass

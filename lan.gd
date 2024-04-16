@@ -12,6 +12,8 @@ func _on_criar_pressed():
 	Network.criar_servidor()
 	$Criar.disabled = true # desabilita botão
 	$Conectar.disabled = true # desabilita botão
+	var ip = Network.retornar_ip()
+	$IPServidor.text = "IP do Servidor: " + ip
 	pass 
 
 

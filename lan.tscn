@@ -96,5 +96,15 @@ text = "NOME:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="IPServidor" type="Label" parent="."]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 299.0
+offset_right = 871.0
+offset_bottom = 375.0
+text = "IP do Servidor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Criar" to="." method="_on_criar_pressed"]
 [connection signal="pressed" from="Conectar" to="." method="_on_conectar_pressed"]
