@@ -17,6 +17,7 @@ func _ready():
 	pass
 
 func conectado_ao_servidor():
+	rpc("registrar_jogador", id, nome_jogador) # chamada remota para registrar jogador
 	pass
 
 func par_disconectado(id):
@@ -28,6 +29,17 @@ func falha_na_conexao():
 func queda_do_servidor():
 	pass
 
+# REGISTRAR JOGADOR
+@rpc("any_peer")
+func registrar_jogador(id,nome):
+	if multiplayer.is_server():
+		# repassa aos clientes a lista de jogadores conectados
+		for i in range(jogadores.size()):
+			rpc_id(id, "registrar_jogador", jogadores[i][0],jogadores[i][1])
+		# registra o novo jogador
+		rpc("registrar_jogador",id,nome)
+	# acrescenta os dados dos jogadores a lista
+	jogadores.append([id,nome])
 # FUNCAO DE CRIACAO DO SERVIDOR
 func criar_servidor():
 	par = ENetMultiplayerPeer.new()
