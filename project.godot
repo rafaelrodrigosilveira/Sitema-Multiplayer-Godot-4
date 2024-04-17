@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 Network="*res://network.gd"
 
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

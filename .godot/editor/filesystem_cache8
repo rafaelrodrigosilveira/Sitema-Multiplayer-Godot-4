@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713295139
+::res://::1713392734
 fase.gd::GDScript::-1::1713294336::0::1::::<>Node2D<>::
-fase.tscn::PackedScene::7795350322267994799::1713294764::0::1::::<><>::res://fase.gd
+fase.tscn::PackedScene::7795350322267994799::1713296647::0::1::::<><>::res://fase.gd
 icon.svg::CompressedTexture2D::2211375068990210424::1713280817::1713280832::1::::<><>::
 jogador.gd::GDScript::-1::1713294591::0::1::::<>Node2D<>::
-jogador.tscn::PackedScene::3131498635235003340::1713294764::0::1::::<><>::uid://6rha3ddnxv1i::::res://icon.svg<>res://jogador.gd
-lan.gd::GDScript::-1::1713292996::0::1::::<>Control<>::
-lan.tscn::PackedScene::4973170903985524123::1713294764::0::1::::<><>::res://lan.gd
-network.gd::GDScript::-1::1713291983::0::1::::<>Node<>::
+jogador.tscn::PackedScene::3131498635235003340::1713296647::0::1::::<><>::uid://6rha3ddnxv1i::::res://icon.svg<>res://jogador.gd
+lan.gd::GDScript::-1::1713392411::0::1::::<>Control<>::
+lan.tscn::PackedScene::4973170903985524123::1713392665::0::1::::<><>::res://lan.gd
+network.gd::GDScript::-1::1713296266::0::1::::<>Node<>::
 README.md::TextFile::-1::1713280760::0::1::::<><>::
